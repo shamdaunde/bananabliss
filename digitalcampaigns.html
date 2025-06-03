@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banana Digital Marketing Campaigns | Banana Bliss</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Fredoka+One&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-yellow: #FFD700;
+            --dark-yellow: #FFC000;
+            --light-yellow: #FFF9C4;
+            --dark: #2C3E50;
+            --light: #ECF0F1;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Fredoka One', cursive;
+        }
+
+        /* Header */
+        .digital-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .digital-header h1 {
+            font-size: 4.5em;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .digital-header p {
+            font-size: 1.5em;
+            max-width: 800px;
+            margin-bottom: 30px;
+        }
+
+        /* Digital Intro */
+        .digital-intro {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: white;
+        }
+
+        .digital-intro h2 {
+            font-size: 3em;
+            margin-bottom: 30px;
+            color: var(--dark);
+        }
+
+        .digital-intro p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+
+        /* Services */
+        .digital-services {
+            padding: 80px 20px;
+            background-color: var(--light-yellow);
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3em;
+            margin-bottom: 60px;
+            color: var(--dark);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--primary-yellow);
+            border-radius: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-content h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .service-content p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+            flex: 1;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .service-features li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .service-features li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary-yellow);
+        }
+
+        /* Campaign Examples */
+        .campaign-examples {
+            padding: 80px 20px;
+            background-color: white;
+        }
+
+        .examples-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .example-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tab-btn {
+            padding: 12px 25px;
+            background-color: var(--light);
+            border: none;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active {
+            background-color: var(--primary-yellow);
+            color: var(--dark);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .example-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .example-card {
+            background-color: var(--light);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .example-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .example-media {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .example-media img,
+        .example-media video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .example-play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 215, 0, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5em;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+
+        .example-card:hover .example-play {
+            opacity: 1;
+        }
+
+        .example-info {
+            padding: 20px;
+        }
+
+        .example-info h4 {
+            margin: 0 0 10px 0;
+            font-size: 1.3em;
+        }
+
+        .example-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            color: var(--dark-yellow);
+            font-weight: 600;
+        }
+
+        /* Strategy Section */
+        .digital-strategy {
+            padding: 80px 20px;
+            background-color: var(--light-yellow);
+        }
+
+        .strategy-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .strategy-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .strategy-step {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .strategy-step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .strategy-icon {
+            font-size: 2.5em;
+            color: var(--primary-yellow);
+            margin-bottom: 20px;
+        }
+
+        .strategy-step h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        /* Testimonials */
+        .digital-testimonials {
+            padding: 80px 20px;
+            background-color: white;
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-slide {
+            background-color: var(--light-yellow);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            display: none;
+        }
+
+        .testimonial-slide.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .testimonial-text::before,
+        .testimonial-text::after {
+            content: '"';
+            font-size: 2em;
+            color: var(--primary-yellow);
+            position: absolute;
+        }
+
+        .testimonial-text::before {
+            top: -15px;
+            left: -10px;
+        }
+
+        .testimonial-text::after {
+            bottom: -30px;
+            right: -10px;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .testimonial-company {
+            color: var(--dark-yellow);
+            font-style: italic;
+        }
+
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 10px;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            background-color: var(--light);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .slider-dot.active {
+            background-color: var(--primary-yellow);
+            transform: scale(        .testimonial-text::before,
+        .testimonial-text::after {
+            content: '"';
+            font-size: 2em;
+            color: var(--primary-yellow);
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .testimonial-nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .testimonial-dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background-color: var(--dark-yellow);
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+            opacity: 0.5;
+        }
+
+        .testimonial-dot.active {
+            opacity: 1;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+
+    </style>
+    </head>
+    
+    <body>
+    
+        <!-- Hero Header -->
+        <header class="digital-header">
+            <h1>Banana Marketing Magic</h1>
+            <p>Explore how we revolutionize fruit branding with creative digital campaigns that stick!</p>
+        </header>
+    
+        <!-- Intro Section -->
+        <section class="digital-intro">
+            <h2>Why Choose Banana Bliss?</h2>
+            <p>We blend creativity, analytics, and storytelling to craft campaigns that leave a lasting impression.
+                Our strategies are ripe with innovation and built to boost your brand awareness and customer engagement.</p>
+        </section>
+    
+        <!-- Services Section -->
+        <section class="digital-services">
+            <div class="services-container">
+                <h2 class="section-title">Our Core Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://source.unsplash.com/600x400/?socialmedia,marketing"
+                                alt="Social Media Marketing">
+                        </div>
+                        <div class="service-content">
+                            <h3>Social Media Marketing</h3>
+                            <p>Engaging content creation and community management for Instagram, Facebook, and more.</p>
+                            <ul class="service-features">
+                                <li>Campaign strategy</li>
+                                <li>Visual branding</li>
+                                <li>Analytics tracking</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://source.unsplash.com/600x400/?seo,marketing" alt="SEO Optimization">
+                        </div>
+                        <div class="service-content">
+                            <h3>SEO Optimization</h3>
+                            <p>Rank higher with our tailored search engine strategies that improve your organic reach.</p>
+                            <ul class="service-features">
+                                <li>Keyword research</li>
+                                <li>On-page optimization</li>
+                                <li>Link building</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Campaign Examples -->
+        <section class="campaign-examples">
+            <div class="examples-container">
+                <h2 class="section-title">Campaign Highlights</h2>
+                <div class="example-tabs">
+                    <button class="tab-btn active" onclick="showTab(0)">Instagram</button>
+                    <button class="tab-btn" onclick="showTab(1)">YouTube</button>
+                </div>
+                <div class="tab-content active">
+                    <div class="example-grid">
+                        <div class="example-card">
+                            <div class="example-media">
+                                <img src="https://source.unsplash.com/400x300/?instagram,campaign" alt="Instagram Campaign">
+                                <div class="example-play"><i class="fas fa-play"></i></div>
+                            </div>
+                            <div class="example-info">
+                                <h4>#GoBananasChallenge</h4>
+                                <div class="example-stats">
+                                    <span>2M Views</span>
+                                    <span>45K Likes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content">
+                    <div class="example-grid">
+                        <div class="example-card">
+                            <div class="example-media">
+                                <video muted autoplay loop>
+                                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                                </video>
+                                <div class="example-play"><i class="fas fa-play"></i></div>
+                            </div>
+                            <div class="example-info">
+                                <h4>Banana Recipe Series</h4>
+                                <div class="example-stats">
+                                    <span>1.2M Views</span>
+                                    <span>30K Likes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Strategy Steps -->
+        <section class="digital-strategy">
+            <div class="strategy-container">
+                <h2 class="section-title">Our Strategy</h2>
+                <div class="strategy-steps">
+                    <div class="strategy-step">
+                        <div class="strategy-icon"><i class="fas fa-lightbulb"></i></div>
+                        <h3>Creative Planning</h3>
+                        <p>We brainstorm bold campaign ideas aligned with your brand and audience.</p>
+                    </div>
+                    <div class="strategy-step">
+                        <div class="strategy-icon"><i class="fas fa-bullhorn"></i></div>
+                        <h3>Execution</h3>
+                        <p>We launch cross-platform campaigns using cutting-edge tools and trends.</p>
+                    </div>
+                    <div class="strategy-step">
+                        <div class="strategy-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>Performance Review</h3>
+                        <p>We analyze campaign performance and optimize for maximum impact.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Testimonials -->
+        <section class="digital-testimonials">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial-slide active">
+                    <p class="testimonial-text">Banana Bliss helped our brand go viral. Our followers grew 10x in just a
+                        month!</p>
+                    <div class="testimonial-author">— Aditi Joshi, Fruitco Pvt Ltd</div>
+                </div>
+                <div class="testimonial-slide">
+                    <p class="testimonial-text">Their digital storytelling is unmatched. It was like our bananas had a
+                        personality!</p>
+                    <div class="testimonial-author">— Marcus Green, Tropix Farms</div>
+                </div>
+                <div class="testimonial-nav">
+                    <span class="testimonial-dot active" onclick="showTestimonial(0)"></span>
+                    <span class="testimonial-dot" onclick="showTestimonial(1)"></span>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Footer -->
+        <footer>
+            <p>© 2025 Banana Bliss. All Rights Reserved.</p>
+        </footer>
+    
+        <!-- JavaScript -->
+        <script>
+            function showTab(index) {
+                const tabs = document.querySelectorAll('.tab-content');
+                const buttons = document.querySelectorAll('.tab-btn');
+                tabs.forEach((tab, i) => {
+                    tab.classList.toggle('active', i === index);
+                    buttons[i].classList.toggle('active', i === index);
+                });
+            }
+
+            function showTestimonial(index) {
+                const slides = document.querySelectorAll('.testimonial-slide');
+                const dots = document.querySelectorAll('.testimonial-dot');
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === index);
+                    dots[i].classList.toggle('active', i === index);
+                });
+            }
+        </script>
+    </body>
+    
+    </html>

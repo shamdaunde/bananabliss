@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Global Search - Banana Bliss</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --primary: #FFEB3B;
+            --dark: #222;
+            --light: #fff;
+            --accent: #FBC02D;
+            --gray: #f4f4f4;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+
+        header {
+            background-color: var(--primary);
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        .section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .country-box {
+            background: var(--gray);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        }
+
+        .country-box h3 {
+            margin: 0 0 10px;
+            color: var(--accent);
+        }
+
+        .country-box p {
+            margin: 5px 0;
+        }
+
+        .highlights {
+            background-color: #fffde7;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+
+        footer {
+            background-color: var(--dark);
+            color: var(--light);
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (min-width: 768px) {
+            .grid-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Global Search</h1>
+        <p>Exploring Banana Consumption & Trends Across the World</p>
+    </header>
+
+    <section class="section">
+        <h2>Top Banana-Consuming Countries</h2>
+        <div class="grid grid-3">
+            <div class="country-box">
+                <h3>India</h3>
+                <p>Consumption: 27 million tons</p>
+                <p>Market Type: Domestic heavy, low export</p>
+            </div>
+            <div class="country-box">
+                <h3>China</h3>
+                <p>Consumption: 12 million tons</p>
+                <p>Trend: Increasing demand for organic bananas</p>
+            </div>
+            <div class="country-box">
+                <h3>USA</h3>
+                <p>Consumption: 6.4 million tons</p>
+                <p>Trend: Packaged banana snacks & smoothies</p>
+            </div>
+            <div class="country-box">
+                <h3>Brazil</h3>
+                <p>Consumption: 6 million tons</p>
+                <p>Focus: Regional consumption & export to South America</p>
+            </div>
+            <div class="country-box">
+                <h3>Indonesia</h3>
+                <p>Consumption: 5.8 million tons</p>
+                <p>Trend: Banana chips & desserts</p>
+            </div>
+            <div class="country-box">
+                <h3>Philippines</h3>
+                <p>Consumption: 4.3 million tons</p>
+                <p>Major Exporter: Japan, Middle East</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section highlights">
+        <h2>Export Opportunities for Banana Bliss</h2>
+        <ul>
+            <li><strong>Japan:</strong> High demand for quality bananas, premium pricing accepted</li>
+            <li><strong>UAE & Middle East:</strong> Strong Indian diaspora market</li>
+            <li><strong>Russia:</strong> Low domestic production, high import reliance</li>
+            <li><strong>Europe:</strong> Demand for certified organic bananas</li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2>Global Banana Trends</h2>
+        <ul>
+            <li>📦 Rise in processed banana products (chips, flour, smoothies)</li>
+            <li>🌱 Demand for sustainable and organic produce</li>
+            <li>📈 Climate change impacting production regions</li>
+            <li>🌍 Banana becoming a staple in non-tropical countries</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© 2025 Banana Bliss. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

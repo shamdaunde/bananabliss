@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banana Bliss - Premium Packaging Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Fredoka+One&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-yellow: #FFD700;
+            --dark-yellow: #FFC000;
+            --light-yellow: #FFF9C4;
+            --dark: #2C3E50;
+            --light: #ECF0F1;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Fredoka One', cursive;
+        }
+
+        /* Header */
+        .packaging-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .packaging-header h1 {
+            font-size: 4.5em;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .packaging-header p {
+            font-size: 1.5em;
+            max-width: 800px;
+            margin-bottom: 30px;
+        }
+
+        /* Packaging Intro */
+        .packaging-intro {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: white;
+        }
+
+        .packaging-intro h2 {
+            font-size: 3em;
+            margin-bottom: 30px;
+            color: var(--dark);
+        }
+
+        .packaging-intro p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+
+        /* Packaging Types */
+        .packaging-types {
+            padding: 80px 20px;
+            background-color: var(--light-yellow);
+        }
+
+        .packaging-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3em;
+            margin-bottom: 60px;
+            color: var(--dark);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--primary-yellow);
+            border-radius: 2px;
+        }
+
+        .packaging-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .packaging-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s;
+        }
+
+        .packaging-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .packaging-img {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .packaging-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .packaging-card:hover .packaging-img img {
+            transform: scale(1.1);
+        }
+
+        .packaging-content {
+            padding: 30px;
+        }
+
+        .packaging-content h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .packaging-content p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .packaging-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .packaging-features li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .packaging-features li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary-yellow);
+        }
+
+        /* Packaging Process */
+        .packaging-process {
+            padding: 80px 20px;
+            background-color: white;
+        }
+
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .process-step {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            text-align: center;
+            padding: 30px;
+            background-color: var(--light-yellow);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: all 0.5s;
+        }
+
+        .process-step:hover {
+            background-color: var(--primary-yellow);
+            transform: translateY(-10px);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--dark);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        .process-step h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        /* Packaging Gallery */
+        .packaging-gallery {
+            padding: 80px 20px;
+            background-color: var(--light-yellow);
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.5s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay i {
+            color: white;
+            font-size: 2.5em;
+        }
+
+        /* CTA Section */
+        .packaging-cta {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--dark-yellow) 100%);
+            text-align: center;
+            color: white;
+        }
+
+        .packaging-cta h2 {
+            font-size: 3em;
+            margin-bottom: 30px;
+        }
+
+        .packaging-cta p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--dark);
+            color: var(--primary-yellow);
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            background-color: white;
+            color: var(--dark);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .packaging-header h1 {
+                font-size: 3em;
+            }
+
+            .packaging-header p {
+                font-size: 1.2em;
+            }
+
+            .section-title {
+                font-size: 2.5em;
+            }
+
+            .packaging-cta h2 {
+                font-size: 2.5em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .packaging-header h1 {
+                font-size: 2.5em;
+            }
+
+            .section-title {
+                font-size: 2em;
+            }
+
+            .packaging-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Packaging Header -->
+    <header class="packaging-header">
+        <h1>Banana Brand Packaging</h1>
+        <p>Transform your banana products with eye-catching, sustainable packaging that stands out on shelves and drives
+            sales</p>
+        <a href="#contact" class="cta-button">Get Your Custom Design</a>
+    </header>
+
+    <!-- Packaging Introduction -->
+    <section class="packaging-intro">
+        <h2>Packaging That Peels the Competition</h2>
+        <p>In the competitive fruit market, your packaging is often the first interaction customers have with your
+            brand. Our banana-specific packaging solutions combine stunning design with practical functionality to
+            protect your product while maximizing shelf appeal.</p>
+        <p>We specialize in creating packaging that not only looks great but also extends shelf life, reduces waste, and
+            tells your brand's story.</p>
+    </section>
+
+    <!-- Packaging Types -->
+    <section class="packaging-types">
+        <div class="packaging-container">
+            <h2 class="section-title">Our Packaging Solutions</h2>
+            <div class="packaging-grid">
+                <!-- Card 1 -->
+                <div class="packaging-card">
+                    <div class="packaging-img">
+                        <img src="https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            alt="Bulk Banana Packaging">
+                    </div>
+                    <div class="packaging-content">
+                        <h3>Bulk Banana Packaging</h3>
+                        <p>Durable, ventilated packaging designed for wholesale distribution and retail displays.</p>
+                        <ul class="packaging-features">
+                            <li>Corrugated cardboard construction</li>
+                            <li>Custom branding options</li>
+                            <li>Ventilation for optimal freshness</li>
+                            <li>Stackable design</li>
+                        </ul>
+                        <a href="#" class="cta-button">View Samples</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="packaging-card">
+                    <div class="packaging-img">
+                        <img src="https://images.unsplash.com/photo-1587135991058-8816df0190fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80"
+                            alt="Retail Banana Bags">
+                    </div>
+                    <div class="packaging-content">
+                        <h3>Retail Banana Bags</h3>
+                        <p>Eco-friendly bags that protect bananas while allowing customers to inspect quality.</p>
+                        <ul class="packaging-features">
+                            <li>Biodegradable materials</li>
+                            <li>Clear viewing windows</li>
+                            <li>Reusable design</li>
+                            <li>Custom sizing available</li>
+                        </ul>
+                        <a href="#" class="cta-button">View Samples</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="packaging-card">
+                    <div class="packaging-img">
+                        <img src="https://images.unsplash.com/photo-1603833665858-e61d17a86224?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                            alt="Premium Gift Boxes">
+                    </div>
+                    <div class="packaging-content">
+                        <h3>Premium Gift Boxes</h3>
+                        <p>Luxury packaging for specialty bananas, organic varieties, and corporate gifts.</p>
+                        <ul class="packaging-features">
+                            <li>High-end materials</li>
+                            <li>Custom inserts</li>
+                            <li>Foam protection</li>
+                            <li>Embossed branding</li>
+                        </ul>
+                        <a href="#" class="cta-button">View Samples</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packaging Process -->
+    <section class="packaging-process">
+        <div class="packaging-container">
+            <h2 class="section-title">Our Packaging Process</h2>
+            <div class="process-steps">
+                <!-- Step 1 -->
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Consultation</h3>
+                    <p>We learn about your bananas, brand, and packaging needs through detailed discussions.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Design</h3>
+                    <p>Our creative team develops packaging concepts tailored to your product and market.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Prototyping</h3>
+                    <p>We create physical prototypes to test functionality and visual appeal.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Production</h3>
+                    <p>Your custom packaging is manufactured with quality materials and precise branding.</p>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Delivery</h3>
+                    <p>We coordinate logistics to get your packaging to you when you need it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packaging Gallery -->
+    <section class="packaging-gallery">
+        <div class="gallery-container">
+            <h2 class="section-title">Packaging Portfolio</h2>
+            <div class="gallery-grid">
+                <!-- Image 1 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        alt="Banana Packaging Design 1">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+
+                <!-- Image 2 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1587135991058-8816df0190fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80"
+                        alt="Banana Packaging Design 2">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+
+                <!-- Image 3 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1603833665858-e61d17a86224?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                        alt="Banana Packaging Design 3">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+
+                <!-- Image 4 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1550258987-190a2d41a8ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                        alt="Banana Packaging Design 4">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+
+                <!-- Image 5 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80"
+                        alt="Banana Packaging Design 5">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+
+                <!-- Image 6 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        alt="Banana Packaging Design 6">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="packaging-cta" id="contact">
+        <h2>Ready to Transform Your Banana Packaging?</h2>
+        <p>Our team of packaging specialists is ready to create custom solutions that will make your bananas stand out
+            in the market. Contact us today to get started!</p>
+        <a href="tel:+919850591158" class="cta-button"><i class="fas fa-phone"></i> Call +91 9850591158</a>
+        <a href="https://instagram.com/sham.daunde17" class="cta-button" target="_blank"><i
+                class="fab fa-instagram"></i> DM on Instagram</a>
+    </section>
+
+    <script>
+        // Simple animation for gallery items
+        document.addEventListener('DOMContentLoaded', function () {
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            galleryItems.forEach((item, index) => {
+                // Add delay based on index for staggered animation
+                item.style.transitionDelay = `${index * 0.1}s`;
+
+                // Add click event for gallery items (would normally open a lightbox)
+                item.addEventListener('click', function () {
+                    alert('This would open a larger view of the packaging design in a real implementation.');
+                });
+            });
+
+            // Animation for process steps
+            const processSteps = document.querySelectorAll('.process-step');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            processSteps.forEach(step => {
+                step.style.opacity = '0';
+                step.style.transform = 'translateY(20px)';
+                step.style.transition = 'all 0.5s ease-out';
+                observer.observe(step);
+            });
+        });
+    </script>
+</body>
+
+</html>

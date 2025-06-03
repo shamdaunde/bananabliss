@@ -1,0 +1,1402 @@
+<html lang="en">
+
+<head>
+    <script type="text/javascript" src="/___vscode_livepreview_injected_script"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banana Bliss - Premium Banana Marketing</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;family=Fredoka+One&amp;display=swap"
+        rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary-yellow: #FFD700;
+            --dark-yellow: #FFC000;
+            --light-yellow: #FFF9C4;
+            --dark: #2C3E50;
+            --light: #ECF0F1;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Fredoka One', cursive;
+        }
+
+        /* Animated Background */
+        .banana-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+            background-image: url('https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80');
+            background-size: cover;
+            background-position: center;
+            animation: zoomInOut 30s infinite alternate;
+        }
+
+        @keyframes zoomInOut {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        /* Random Shape Divider - More Creative */
+        .divider {
+            position: relative;
+            height: 120px;
+            background: var(--primary-yellow);
+            overflow: hidden;
+        }
+
+        .divider::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            height: 100%;
+            background: var(--light);
+            clip-path: url(#wave-divider);
+        }
+
+        .divider.reverse {
+            background: var(--light);
+        }
+
+        .divider.reverse::before {
+            background: var(--primary-yellow);
+            clip-path: url(#wave-divider-reverse);
+        }
+
+        /* Floating Bananas Animation */
+        .floating-bananas {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-banana {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-image: url('https://cdn-icons-png.flaticon.com/512/2909/2909761.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.3;
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-100px) rotate(180deg);
+            }
+
+            100% {
+                transform: translateY(0) rotate(360deg);
+            }
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--primary-yellow);
+            padding: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo {
+            font-size: 3.5em;
+            font-weight: bold;
+            color: white;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+            transition: all 0.5s;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+            text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo span {
+            color: var(--dark);
+        }
+
+        .tagline {
+            font-size: 1.2em;
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--dark);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            margin: 0 20px;
+            position: relative;
+        }
+
+        nav a {
+            color: var(--primary-yellow);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.3s;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            color: white;
+            background-color: rgba(255, 215, 0, 0.2);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: white;
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--dark-yellow) 100%);
+            padding: 120px 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            animation: fadeInDown 1s both;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            animation: fadeInUp 1s both 0.3s;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--dark);
+            color: var(--primary-yellow);
+            padding: 18px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.3s;
+            animation: fadeIn 1s both 0.6s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button:hover {
+            background-color: white;
+            color: var(--dark);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        /* Banana Counter */
+        .banana-counter {
+            background-color: var(--dark);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        .counter-number {
+            font-size: 2em;
+            color: var(--primary-yellow);
+            font-weight: bold;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 20px;
+            background-color: white;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3em;
+            margin-bottom: 60px;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--primary-yellow);
+            border-radius: 2px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background-color: var(--light-yellow);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary-yellow), var(--dark-yellow));
+            opacity: 0;
+            transition: 0.5s;
+            z-index: -1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-15px);
+            color: white;
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-card:hover .feature-icon {
+            color: white;
+            transform: scale(1.2);
+        }
+
+        .feature-card:hover h3 {
+            color: white;
+        }
+
+        .feature-icon {
+            font-size: 3.5em;
+            color: var(--primary-yellow);
+            margin-bottom: 25px;
+            transition: all 0.5s;
+        }
+
+        .feature-card h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: var(--dark);
+            transition: all 0.5s;
+        }
+
+        /* Banana Gallery */
+        .banana-gallery {
+            padding: 80px 20px;
+            background-color: var(--light-yellow);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: 250px;
+            transition: all 0.5s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 20px;
+            background-color: var(--primary-yellow);
+            color: white;
+            position: relative;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 40px 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            background-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 25px;
+            font-size: 1.2em;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .testimonial-text::before,
+        .testimonial-text::after {
+            content: '"';
+            font-size: 2em;
+            color: rgba(255, 255, 255, 0.5);
+            position: absolute;
+        }
+
+        .testimonial-text::before {
+            top: -15px;
+            left: -10px;
+        }
+
+        .testimonial-text::after {
+            bottom: -30px;
+            right: -10px;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            font-size: 1.3em;
+            text-align: right;
+        }
+
+        .testimonial-rating {
+            color: var(--dark-yellow);
+            margin-top: 10px;
+            text-align: right;
+        }
+
+        /* Contact Form */
+        .contact {
+            padding: 100px 20px;
+            background-color: white;
+        }
+
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 50px;
+            align-items: center;
+        }
+
+        .contact-info {
+            background-color: var(--light-yellow);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info h3 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: var(--dark);
+            position: relative;
+        }
+
+        .contact-info h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-yellow);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-yellow);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .contact-text h4 {
+            margin: 0 0 5px 0;
+            font-size: 1.2em;
+        }
+
+        .contact-text p,
+        .contact-text a {
+            margin: 0;
+            color: var(--dark);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-text a:hover {
+            color: var(--primary-yellow);
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 30px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-yellow);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background-color: var(--dark);
+            transform: translateY(-5px);
+        }
+
+        .contact-form {
+            background-color: var(--light);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-yellow);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: var(--primary-yellow);
+            color: var(--dark);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            font-size: 1.1em;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--dark-yellow);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--primary-yellow);
+            padding: 70px 20px 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: left;
+        }
+
+        .footer-column h3 {
+            color: white;
+            font-size: 1.5em;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary-yellow);
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column a {
+            color: var(--primary-yellow);
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .footer-column a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-column a::before {
+            content: '→ ';
+            opacity: 0;
+            transition: all 0.3s;
+        }
+
+        .footer-column a:hover::before {
+            opacity: 1;
+        }
+
+        .newsletter-form {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .newsletter-btn {
+            background-color: var(--primary-yellow);
+            color: var(--dark);
+            border: none;
+            padding: 0 15px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .newsletter-btn:hover {
+            background-color: var(--dark-yellow);
+        }
+
+        .copyright {
+            margin-top: 70px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 215, 0, 0.3);
+            text-align: center;
+        }
+
+        .back-to-top {
+            position: absolute;
+            top: -25px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-yellow);
+            color: var(--dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-to-top:hover {
+            background-color: white;
+            transform: translateY(-5px);
+        }
+
+        /* Banana Peel Animation */
+        .banana-peel {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-image: url('https://cdn-icons-png.flaticon.com/512/3149/3149025.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.5;
+            z-index: -1;
+            animation: peelFall 20s linear infinite;
+        }
+
+        @keyframes peelFall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+            }
+
+            100% {
+                transform: translateY(calc(100vh + 100px)) rotate(360deg);
+            }
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2.5em;
+            }
+
+            .hero h1 {
+                font-size: 3em;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5em;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav li {
+                margin: 10px 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1.2em;
+            }
+
+            .section-title {
+                font-size: 2em;
+            }
+
+            .features-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="banana-bg"></div>
+
+    <!-- Floating Bananas -->
+    <div class="floating-bananas" id="floatingBananas">
+        <div class="floating-banana"
+            style="left: 41.8739%; top: 7.31836%; width: 51.2327px; height: 51.2327px; animation-duration: 28.7881s; animation-delay: -7.15312s;">
+        </div>
+        <div class="floating-banana"
+            style="left: 37.1843%; top: 69.6006%; width: 45.1125px; height: 45.1125px; animation-duration: 29.4535s; animation-delay: -3.14165s;">
+        </div>
+        <div class="floating-banana"
+            style="left: 22.8289%; top: 23.8573%; width: 48.6436px; height: 48.6436px; animation-duration: 27.9621s; animation-delay: -7.72839s;">
+        </div>
+        <div class="floating-banana"
+            style="left: 49.9187%; top: 25.5621%; width: 41.5129px; height: 41.5129px; animation-duration: 25.3997s; animation-delay: -6.10111s;">
+        </div>
+        <div class="floating-banana"
+            style="left: 94.2733%; top: 30.5491%; width: 31.6626px; height: 31.6626px; animation-duration: 11.6917s; animation-delay: -0.303125s;">
+        </div>
+        <div class="floating-banana"
+            style="left: 0.163699%; top: 70.4235%; width: 67.4961px; height: 67.4961px; animation-duration: 19.7618s; animation-delay: -8.33518s;">
+        </div>
+        <div class="floating-banana"
+            style="left: 45.2832%; top: 10.6576%; width: 61.3626px; height: 61.3626px; animation-duration: 20.4078s; animation-delay: -9.81863s;">
+        </div>
+        <div class="floating-banana"
+            style="left: 84.4108%; top: 58.6666%; width: 45.2744px; height: 45.2744px; animation-duration: 27.4833s; animation-delay: -5.12368s;">
+        </div>
+        <div class="floating-banana"
+            style="left: 51.8545%; top: 5.30821%; width: 36.3123px; height: 36.3123px; animation-duration: 14.697s; animation-delay: -1.18248s;">
+        </div>
+        <div class="floating-banana"
+            style="left: 77.4076%; top: 43.2969%; width: 56.7211px; height: 56.7211px; animation-duration: 10.8153s; animation-delay: -7.13281s;">
+        </div>
+        <div class="floating-banana"
+            style="left: 21.3193%; top: 87.841%; width: 53.9842px; height: 53.9842px; animation-duration: 16.0924s; animation-delay: -6.19617s;">
+        </div>
+        <div class="floating-banana"
+            style="left: 86.2787%; top: 91.0729%; width: 66.216px; height: 66.216px; animation-duration: 28.3034s; animation-delay: -1.53848s;">
+        </div>
+        <div class="floating-banana"
+            style="left: 56.5294%; top: 46.6693%; width: 45.0875px; height: 45.0875px; animation-duration: 17.2532s; animation-delay: -3.26909s;">
+        </div>
+        <div class="floating-banana"
+            style="left: 96.9105%; top: 49.7325%; width: 32.2239px; height: 32.2239px; animation-duration: 20.573s; animation-delay: -7.36085s;">
+        </div>
+        <div class="floating-banana"
+            style="left: 0.549903%; top: 66.1254%; width: 42.9007px; height: 42.9007px; animation-duration: 18.8307s; animation-delay: -7.70904s;">
+        </div>
+    </div>
+
+    <!-- Banana Peels -->
+    <div class="banana-peels" id="bananaPeels">
+        <div class="banana-peel"
+            style="left: 19.7823%; width: 105.485px; height: 105.485px; animation-duration: 23.1867s; animation-delay: -17.5593s;">
+        </div>
+        <div class="banana-peel"
+            style="left: 22.0783%; width: 57.6273px; height: 57.6273px; animation-duration: 26.9132s; animation-delay: -9.19654s;">
+        </div>
+        <div class="banana-peel"
+            style="left: 38.7128%; width: 71.1946px; height: 71.1946px; animation-duration: 19.9716s; animation-delay: -9.78594s;">
+        </div>
+        <div class="banana-peel"
+            style="left: 62.9789%; width: 71.8929px; height: 71.8929px; animation-duration: 16.061s; animation-delay: -10.0868s;">
+        </div>
+        <div class="banana-peel"
+            style="left: 38.92%; width: 135.873px; height: 135.873px; animation-duration: 17.7746s; animation-delay: -5.11388s;">
+        </div>
+        <div class="banana-peel"
+            style="left: 59.2651%; width: 117.303px; height: 117.303px; animation-duration: 18.0173s; animation-delay: -7.37052s;">
+        </div>
+        <div class="banana-peel"
+            style="left: 49.0999%; width: 143.308px; height: 143.308px; animation-duration: 29.6534s; animation-delay: -1.73316s;">
+        </div>
+        <div class="banana-peel"
+            style="left: 17.213%; width: 129.949px; height: 129.949px; animation-duration: 27.4397s; animation-delay: -19.5783s;">
+        </div>
+    </div>
+
+    <!-- SVG Wave Dividers -->
+    <svg width="0" height="0" style="position: absolute;">
+        <defs>
+            <clipPath id="wave-divider" clipPathUnits="objectBoundingBox">
+                <path d="M0,0.8 C0.2,0.6 0.4,0.9 0.6,0.7 C0.8,0.9 1,0.6 1,0.8 L1,1 L0,1 Z"></path>
+            </clipPath>
+            <clipPath id="wave-divider-reverse" clipPathUnits="objectBoundingBox">
+                <path d="M0,0.2 C0.2,0.4 0.4,0.1 0.6,0.3 C0.8,0.1 1,0.4 1,0.2 L1,0 L0,0 Z"></path>
+            </clipPath>
+        </defs>
+    </svg>
+
+    <header>
+        <div class="logo">BANANA<span>BLISS</span></div>
+        <p class="tagline">Marketing the world's finest bananas since 2010</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#products"><i class="fas fa-basket-shopping"></i> Products</a></li>
+            <li><a href="#gallery"><i class="fas fa-images"></i> Gallery</a></li>
+            <li><a href="#testimonials"><i class="fas fa-star"></i> Testimonials</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="divider"></div>
+
+    <section class="hero" id="home">
+        <h1 class="animate__animated animate__fadeInDown">Go Bananas for Our Marketing!</h1>
+        <p class="animate__animated animate__fadeInUp">We specialize in creating peel-icious advertising campaigns that
+            will make your bananas stand out in the crowded fruit market.</p>
+        <a href="#contact" class="cta-button animate__animated animate__fadeIn">Get a Free Quote <i
+                class="fas fa-arrow-right"></i></a>
+    </section>
+
+    <div class="banana-counter">
+        <p>We've helped sell over <span class="counter-number" data-target="12563478">12,563,478</span> bananas
+            worldwide!</p>
+    </div>
+
+    <div class="divider reverse"></div>
+
+    <section class="features" id="products">
+        <h2 class="section-title">Our Banana Marketing Services</h2>
+        <div class="features-grid">
+            <div class="feature-card" style="opacity: 1; transform: translateY(0px); transition: 0.6s ease-out;">
+                <div class="feature-icon"><i class="fas fa-box-open"></i></div>
+                <h3>Brand Packaging</h3>
+                <p>Eye-catching designs that make your bananas impossible to resist at the grocery store.</p>
+            </div>
+            <div class="feature-card" style="opacity: 1; transform: translateY(0px); transition: 0.6s ease-out;">
+                <div class="feature-icon"><i class="fas fa-mobile-screen"></i></div>
+                <h3>Digital Campaigns</h3>
+                <p>Social media strategies that will have everyone talking about your bananas.</p>
+            </div>
+            <div class="feature-card" style="opacity: 1; transform: translateY(0px); transition: 0.6s ease-out;">
+                <div class="feature-icon"><i class="fas fa-tv"></i></div>
+                <h3>TV Commercials</h3>
+                <p>Memorable ads featuring dancing bananas that customers won't forget.</p>
+            </div>
+            <div class="feature-card" style="opacity: 1; transform: translateY(0px); transition: 0.6s ease-out;">
+                <div class="feature-icon"><i class="fas fa-store"></i></div>
+                <h3>Retail Displays</h3>
+                <p>Creative in-store displays that boost banana sales by up to 300%.</p>
+            </div>
+            <div class="feature-card" style="opacity: 1; transform: translateY(0px); transition: 0.6s ease-out;">
+                <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>Market Analysis</h3>
+                <p>Data-driven insights to help you understand your banana consumers better.</p>
+            </div>
+            <div class="feature-card" style="opacity: 1; transform: translateY(0px); transition: 0.6s ease-out;">
+                <div class="feature-icon"><i class="fas fa-globe"></i></div>
+                <h3>Global Reach</h3>
+                <p>We market bananas worldwide, from Ecuador to your local supermarket.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="banana-gallery" id="gallery">
+        <h2 class="section-title">Banana Beauty</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item" style="opacity: 1; transform: translateY(0px); transition: 0.6s ease-out;">
+                <img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
+                    alt="Banana plantation">
+            </div>
+            <div class="gallery-item" style="opacity: 1; transform: translateY(0px); transition: 0.6s ease-out;">
+                <img src="https://images.unsplash.com/photo-1603833665858-e61d17a86224?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1374&amp;q=80"
+                    alt="Banana bunch">
+            </div>
+            <div class="gallery-item" style="opacity: 1; transform: translateY(0px); transition: 0.6s ease-out;">
+                <img src="https://images.unsplash.com/photo-1587135991058-8816df0190fa?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1472&amp;q=80"
+                    alt="Banana smoothie">
+            </div>
+            <div class="gallery-item" style="opacity: 1; transform: translateY(0px); transition: 0.6s ease-out;">
+                <img src="https://images.unsplash.com/photo-1550258987-190a2d41a8ba?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1374&amp;q=80"
+                    alt="Banana bread">
+            </div>
+            <div class="gallery-item" style="opacity: 1; transform: translateY(0px); transition: 0.6s ease-out;">
+                <img src="https://images.unsplash.com/photo-1603833665858-e61d17a86224?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1374&amp;q=80"
+                    alt="Banana chips">
+            </div>
+            <div class="gallery-item" style="opacity: 1; transform: translateY(0px); transition: 0.6s ease-out;">
+                <img src="https://images.unsplash.com/photo-1587135991058-8816df0190fa?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1472&amp;q=80"
+                    alt="Banana farm">
+            </div>
+        </div>
+    </section>
+
+    <div class="divider reverse"></div>
+
+    <section class="testimonials" id="testimonials">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card" style="opacity: 1; transform: translateY(0px); transition: 0.6s ease-out;">
+                <p class="testimonial-text">Banana Bliss transformed our sales! Our bananas are now the top-selling item
+                    in every store we supply. Their marketing strategies are simply brilliant.</p>
+                <p class="testimonial-author">- Carlos M., Tropical Fruits Inc.</p>
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            <div class="testimonial-card" style="opacity: 1; transform: translateY(0px); transition: 0.6s ease-out;">
+                <p class="testimonial-text">The packaging design was so appealing that customers were picking our
+                    bananas over organic options at higher price points! Worth every penny.</p>
+                <p class="testimonial-author">- Sarah L., Fresh Market Co.</p>
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            <div class="testimonial-card" style="opacity: 1; transform: translateY(0px); transition: 0.6s ease-out;">
+                <p class="testimonial-text">Our banana social media campaign went viral! We had to order 3 extra
+                    shipments to keep up with demand. Banana Bliss knows how to make fruit exciting.</p>
+                <p class="testimonial-author">- Jamal R., Sunshine Produce</p>
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="contact" id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>Address</h4>
+                        <p>Shivanjali society,Vijaysihnagar,Malinagar</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>Phone</h4>
+                        <p><a href="tel:+919850591158">+91 9850591158</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>Email</h4>
+                        <p><a href="mailto:shamdaunde2004@gmail.com">shamdaunde2004@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>Working Hours</h4>
+                        <p>Monday - Friday: 9am - 6pm</p>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://instagram.com/sham.daunde17" class="social-link" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" class="form-control" required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" class="form-control" required="" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" class="form-control" required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" class="form-control" required=""></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider reverse"></div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Banana Bliss</h3>
+                <p>We're passionate about marketing bananas in creative ways that drive sales and build brand
+                    recognition in the competitive fruit market.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home"><i class="fas fa-caret-right"></i> Home</a></li>
+                    <li><a href="#products"><i class="fas fa-caret-right"></i> Products</a></li>
+                    <li><a href="#gallery"><i class="fas fa-caret-right"></i> Gallery</a></li>
+                    <li><a href="#testimonials"><i class="fas fa-caret-right"></i> Testimonials</a></li>
+                    <li><a href="#contact"><i class="fas fa-caret-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-caret-right"></i> Packaging Design</a></li>
+                    <li><a href="#"><i class="fas fa-caret-right"></i> Digital Marketing</a></li>
+                    <li><a href="#"><i class="fas fa-caret-right"></i> Retail Strategy</a></li>
+                    <li><a href="#"><i class="fas fa-caret-right"></i> Brand Development</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Newsletter</h3>
+                <p>Subscribe to our newsletter for banana marketing tips and special offers.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your Email" class="newsletter-input" required="">
+                    <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2023 Banana Bliss Marketing. All rights reserved. | Designed with <i class="fas fa-heart"
+                    style="color: #ff4757;"></i> by Sham Daunde</p>
+        </div>
+        <div class="back-to-top" id="backToTop" style="opacity: 1; visibility: visible;">
+            <i class="fas fa-arrow-up"></i>
+        </div>
+    </footer>
+
+    <script>
+        // Floating Bananas Animation
+        function createFloatingBananas() {
+            const container = document.getElementById('floatingBananas');
+            const bananaCount = 15;
+
+            for (let i = 0; i < bananaCount; i++) {
+                const banana = document.createElement('div');
+                banana.className = 'floating-banana';
+
+                // Random position
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+
+                // Random size
+                const size = 30 + Math.random() * 40;
+
+                // Random animation duration
+                const duration = 10 + Math.random() * 20;
+
+                // Random delay
+                const delay = Math.random() * 10;
+
+                banana.style.left = `${posX}%`;
+                banana.style.top = `${posY}%`;
+                banana.style.width = `${size}px`;
+                banana.style.height = `${size}px`;
+                banana.style.animationDuration = `${duration}s`;
+                banana.style.animationDelay = `-${delay}s`;
+
+                container.appendChild(banana);
+            }
+        }
+
+        // Falling Banana Peels Animation
+        function createBananaPeels() {
+            const container = document.getElementById('bananaPeels');
+            const peelCount = 8;
+
+            for (let i = 0; i < peelCount; i++) {
+                const peel = document.createElement('div');
+                peel.className = 'banana-peel';
+
+                // Random position
+                const posX = Math.random() * 100;
+
+                // Random size
+                const size = 50 + Math.random() * 100;
+
+                // Random animation duration
+                const duration = 15 + Math.random() * 15;
+
+                // Random delay
+                const delay = Math.random() * 20;
+
+                peel.style.left = `${posX}%`;
+                peel.style.width = `${size}px`;
+                peel.style.height = `${size}px`;
+                peel.style.animationDuration = `${duration}s`;
+                peel.style.animationDelay = `-${delay}s`;
+
+                container.appendChild(peel);
+            }
+        }
+
+        // Counter Animation
+        function animateCounter() {
+            const counter = document.querySelector('.counter-number');
+            const target = parseInt(counter.getAttribute('data-target'));
+            const duration = 3000; // Animation duration in ms
+            const step = target / (duration / 16); // 60fps
+
+            let current = 0;
+
+            const updateCounter = () => {
+                current += step;
+                if (current < target) {
+                    counter.textContent = Math.floor(current).toLocaleString();
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.textContent = target.toLocaleString();
+                }
+            };
+
+            updateCounter();
+        }
+
+        // Back to Top Button
+        function setupBackToTop() {
+            const backToTop = document.getElementById('backToTop');
+
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTop.style.opacity = '1';
+                    backToTop.style.visibility = 'visible';
+                } else {
+                    backToTop.style.opacity = '0';
+                    backToTop.style.visibility = 'hidden';
+                }
+            });
+
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Form Submission
+        function setupForm() {
+            const form = document.getElementById('contactForm');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+
+                // Here you would typically send the form data to a server
+                // For this example, we'll just show an alert
+                alert(`Thank you, ${name}! Your message about "${subject}" has been received. We'll contact you at ${email} soon.`);
+
+                // Reset form
+                form.reset();
+            });
+        }
+
+        // Smooth Scrolling for Anchor Links
+        function setupSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Initialize all functions when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            createFloatingBananas();
+            createBananaPeels();
+            animateCounter();
+            setupBackToTop();
+            setupForm();
+            setupSmoothScrolling();
+
+            // Add animation to elements when they come into view
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll('.feature-card, .testimonial-card, .gallery-item');
+
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+
+                    if (elementPosition < screenPosition) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+
+            // Set initial state for animated elements
+            document.querySelectorAll('.feature-card, .testimonial-card, .gallery-item').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.6s ease-out';
+            });
+
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Run once on load
+        });
+    </script>
+
+
+    <iframe frameborder="0" scrolling="no" style="background-color: transparent; border: 0px; display: none;"></iframe>
+    <div id="GOOGLE_INPUT_CHEXT_FLAG" input=""
+        input_stat="{&quot;tlang&quot;:true,&quot;tsbc&quot;:true,&quot;pun&quot;:true,&quot;mk&quot;:true,&quot;ss&quot;:true}"
+        style="display: none;"></div>
+</body>
+
+</html>
